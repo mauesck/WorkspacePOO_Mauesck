@@ -2,15 +2,13 @@ package CalculadoraV4;
 
 public class Soma {
 
-	//Atributos privados da Classe.
 	private double num1;
 	private double num2;
 
-	//Getter para acessar e guardar o atributo.
 	public double getNum1() {
 		return num1;
 	}
-	//Setter para definir os valores.
+
 	public void setNum1(double num1) {
 		this.num1 = num1;
 	}

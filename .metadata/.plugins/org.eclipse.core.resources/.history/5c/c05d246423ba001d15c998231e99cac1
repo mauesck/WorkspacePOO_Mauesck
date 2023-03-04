@@ -11,34 +11,22 @@ public class Principal {
 		int continuar;
 		double resultado = 0;
 
-		//Repetir até a condição ser atendida.
 		do {
-			//Solicitar números.
 			double num1 = EntradaSaida.solicitaNumero("1°");
 			double num2 = EntradaSaida.solicitaNumero("2º");
-			//Solicitar operação.
 			int operacao = EntradaSaida.solicitaOperacao();
 
-			//Case de operações.
 			switch (operacao) {
 			case 1:
-				//Instância da Classe Soma, objeto "soma".
 				Soma soma = new Soma();
-				//Acessando com o objeto "soma", dentro da Classe "Soma", o método "SetNum1" que está acessando o Método "calculaSoma".
 				soma.setNum1(num1);
-				//Acessando com o objeto "soma", dentro da Classe "Soma", o método "SetNum2" que está acessando o Método "calculaSoma".
 				soma.setNum2(num2);
-				//Guardando o resultado do Cálculo.
 				resultado = soma.calculaSoma();
 				break;
 			case 2:
-				//Instância da Classe Subtracao, objeto "sub".
 				Subtracao sub = new Subtracao();
-				//Acessando com o objeto "sub", dentro da Classe "Subtracao", o método "SetNum1" que está acessando o Método "calculaSubtracao".
 				sub.setNum1(num1);
-				//Acessando com o objeto "sub", dentro da Classe "Subtracao", o método "SetNum2" que está acessando o Método "calculaSubtracao".
 				sub.setNum2(num2);
-				//Guardando o resultado do Cálculo.
 				resultado = sub.calculaSubtracao();
 				break;
 			case 3:
