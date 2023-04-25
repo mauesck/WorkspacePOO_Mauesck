@@ -15,6 +15,12 @@ public class Controladora {
 			
 			switch(opcao) {
 			case 0:
+				this.casa = new casa();
+				
+				String descricao = EntradaSaida.solicitaDescricao("casa",0);
+				String cor = EntradaSaida.solicitaCor();
+				int qtdePortas = EntradaSaida.solicitaQtdeAberturas("portas");
+				int qtdeJanelas = EntradaSaida.solicitaQtdeAberturas("janelas");
 				JOptionPane.showMessageDialog(null, "Construir casa");
 			break;
 			

@@ -15,4 +15,20 @@ public class EntradaSaida {
 	public static void exibeMsgEncerraPrograma() {
 		JOptionPane.showMessageDialog(null, "O programa será encerrado!");
 	}
+	
+	public static String solicitaDescricao(String descricao, int ordem) {
+		if(ordem==0) {
+			return JOptionPane.showInputDialog("Informe a descricao da "+descricao);
+		}else {
+			return JOptionPane.showInputDialog("Informe a descricao da "+ordem+" "+descricao);	
+		}
+	}
+	
+	public static String solicitaCor() {
+		return JOptionPane.showInputDialog("Informe a cor da casa");
+	}
+	
+	public static int solicitaQtdeAberturas(String abertura) {
+		return Integer.parseInt(JOptionPane.showInputDialog("Informe a quantidade de "+abertura));
+	}
 }
