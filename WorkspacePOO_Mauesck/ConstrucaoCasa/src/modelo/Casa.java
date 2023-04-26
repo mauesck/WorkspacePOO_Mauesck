@@ -3,7 +3,7 @@ package modelo;
 import java.util.ArrayList;
 
 public class Casa {
-
+	
 	private String descricao;
 	private String cor;
 	private ArrayList<Aberturas> listaDePortas = new ArrayList<Aberturas>();
@@ -32,5 +32,13 @@ public class Casa {
 	}
 	public void setListaDeJanelas(ArrayList<Aberturas> listaDeJanelas) {
 		this.listaDeJanelas = listaDeJanelas;
+	}
+	
+	public void constroiCasa(String descricao, String cor, ArrayList<Aberturas> listaDePortas,
+			ArrayList<Aberturas> listaDeJanelas) {
+		setDescricao(descricao);
+		setCor(cor);
+		setListaDePortas(listaDePortas);
+		setListaDeJanelas(listaDeJanelas);
 	}
 }
