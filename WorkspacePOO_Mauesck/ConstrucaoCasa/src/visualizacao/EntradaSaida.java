@@ -33,7 +33,7 @@ public class EntradaSaida {
 	}
 	
 	public static int solicitaEstado(String tipoAbertura) {
-		String[] opcoes = {"Fechada","Aberta"};
+		String[] opcoes = {"Fechada","Aberta","teste"};
 		
 		return JOptionPane.showOptionDialog(null, "Informe o estado da "+tipoAbertura, 
 				"Estado", JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, opcoes, opcoes[1]);

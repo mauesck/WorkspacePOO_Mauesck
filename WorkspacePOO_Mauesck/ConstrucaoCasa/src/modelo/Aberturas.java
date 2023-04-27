@@ -1,5 +1,6 @@
 package modelo;
 
+//Classe mãe das classes Porta e Janela.
 public abstract class Aberturas {
 	protected String descricao;
 	protected int estado;

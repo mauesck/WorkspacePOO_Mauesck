@@ -2,13 +2,17 @@ package modelo;
 
 import java.util.ArrayList;
 
+/*Diferentemente das classes Porta e Janela a classe Casa possui atributos 
+especificos dos quais não partilham outras classes tornando inviável a herança.*/
 public class Casa {
 	
 	private String descricao;
 	private String cor;
+	//Atributo: Modificador > Tipo > Nome-Atributo = Construtor
 	private ArrayList<Aberturas> listaDePortas = new ArrayList<Aberturas>();
 	private ArrayList<Aberturas> listaDeJanelas = new ArrayList<Aberturas>();
 	
+	//Há um getter e um setter para cada um dos atributos acima.
 	public String getDescricao() {
 		return descricao;
 	}
