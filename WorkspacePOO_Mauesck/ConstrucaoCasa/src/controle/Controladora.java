@@ -69,6 +69,23 @@ public class Controladora {
 			break;
 			
 			case 1:
+				//Variável recebendo o retorno do médoto.
+				String tipoAbertura = EntradaSaida.solicitaTipoAbertura();
+				
+				ArrayList<Aberturas> listaDeAberturas = new ArrayList<Aberturas>();
+				
+				//Validando o retorno do método solicitaTipoAbertura().
+				if(tipoAbertura.equals("porta")) {
+					/*Objeto casa acessando getListaDePortas() enviando o retorno 
+					a var ListaDeAberturas do tipo ArrayList*/ 
+					listaDeAberturas = this.casa.getListaDePortas();
+				}else {
+					listaDeAberturas = this.casa.getListaDeJanelas();
+				}
+				
+				int posicao = EntradaSaida.solicitaAberturaMover(listaDeAberturas);
+				int novoEstado=0;
+			
 				JOptionPane.showConfirmDialog(null, "Movimentar portas ou janelas");
 			break;
 			
