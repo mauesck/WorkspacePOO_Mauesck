@@ -67,7 +67,16 @@ public class EntradaSaida {
 			descricoesAberturas[i]=listaDeAberturas.get(i).getDescricao();
 		}
 		
-		String msg = "Escolha a "+tipoAbertura
+		String msg = "Escolha a "+tipoAbertura+"a ser movimentada";
+		JComboBox exibicaoAberturas = new JComboBox(descricoesAberturas);
+		int confirmacao = JOptionPane.showConfirmDialog(null, exibicaoAberturas, msg,
+				JOptionPane.OK_CANCEL_OPTION);
+		
+		if(confirmacao==0) {
+			return exibicaoAberturas.getSelectedIndex();
+		}else {
+			return -1;
+		}
 		
 	}
 }
