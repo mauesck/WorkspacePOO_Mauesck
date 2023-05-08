@@ -6,6 +6,7 @@ import java.util.ArrayList;
 especificos dos quais não partilham outras classes tornando inviável a herança.*/
 public class Casa {
 	
+	//OT9.3
 	private String descricao;
 	private String cor;
 	//Atributo: Modificador > Tipo > Nome-Atributo = Construtor
@@ -38,11 +39,26 @@ public class Casa {
 		this.listaDeJanelas = listaDeJanelas;
 	}
 	
+	//OT9.9
 	public void constroiCasa(String descricao, String cor, ArrayList<Aberturas> listaDePortas,
 			ArrayList<Aberturas> listaDeJanelas) {
 		setDescricao(descricao);
 		setCor(cor);
 		setListaDePortas(listaDePortas);
 		setListaDeJanelas(listaDeJanelas);
+	}
+	
+	//OT10.5
+	public Aberturas retornaAbertura(int posicao, String tipoAbertura) {
+		if(tipoAbertura.equals("porta")) {
+			return this.listaDePortas.get(posicao);
+		}else {
+			return this.listaDeJanelas.get(posicao);
+		}
+	}
+	
+	//OT10.6
+	public void moverAbertura(Aberturas abertura, int novoEstado) {
+		abertura.setEstado(novoEstado);
 	}
 }

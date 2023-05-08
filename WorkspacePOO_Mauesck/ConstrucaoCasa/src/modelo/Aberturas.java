@@ -1,7 +1,10 @@
 package modelo;
 
+//OT8.1
 //Classe mãe das classes Porta e Janela.
 public abstract class Aberturas {
+	
+	//OT9.1
 	protected String descricao;
 	protected int estado;
 	

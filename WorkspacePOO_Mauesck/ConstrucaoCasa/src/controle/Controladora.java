@@ -8,6 +8,7 @@ import modelo.*;
 
 public class Controladora {
 
+	//OT8.2
 	//obejo casa do tipo Casa sendo isntânciado vazio.
 	private Casa casa = null;
 
@@ -18,6 +19,8 @@ public class Controladora {
 			
 			switch(opcao) {
 			case 0:
+				
+				//OT9.4
 				//objeto casa recebendo o construtor Casa().
 				this.casa = new Casa();
 				
@@ -27,6 +30,7 @@ public class Controladora {
 				int qtdePortas = EntradaSaida.solicitaQtdeAberturas("portas");
 				int qtdeJanelas = EntradaSaida.solicitaQtdeAberturas("janelas");
 				
+				//OT9.6
 				//*1* > Declaração de um ArrayList do tipo Aberturas, que receberá cada uma das portas cadastradas.
 				ArrayList<Aberturas> listaDePortas = new ArrayList<Aberturas>();
 				//Este for é necessário para inserir a quantidade de descrições e estados para a quantidade de portas.
@@ -48,9 +52,11 @@ public class Controladora {
 					listaDeJanelas.add(janela);
 				}
 				
+				//OT9.8
 				//Objeto casa acessando o metodo constroiCasa().
 				this.casa.constroiCasa(descricao,cor,listaDePortas,listaDeJanelas);
 				
+				//OT9.10
 				//Mostra valores dos métodos.
 				System.out.print("Descrição da casa: "+ casa.getDescricao()+"\n");
 				System.out.print("Cor da casa: "+casa.getCor()+"\n");
@@ -69,10 +75,13 @@ public class Controladora {
 			break;
 			
 			case 1:
+				//OT10.1
 				//Variável recebendo o retorno do médoto.
 				String tipoAbertura = EntradaSaida.solicitaTipoAbertura();
 				
+				//OT10.2
 				ArrayList<Aberturas> listaDeAberturas = new ArrayList<Aberturas>();
+				
 				
 				//Validando o retorno do método solicitaTipoAbertura().
 				if(tipoAbertura.equals("porta")) {
@@ -83,8 +92,19 @@ public class Controladora {
 					listaDeAberturas = this.casa.getListaDeJanelas();
 				}
 				
+				//OT10.3
 				int posicao = EntradaSaida.solicitaAberturaMover(listaDeAberturas);
 				int novoEstado=0;
+				
+				//OT10.4
+				if(posicao!=-1) {
+					novoEstado = EntradaSaida.solicitaEstado(tipoAbertura);
+					Aberturas abertura = this.casa.retornaAbertura(posicao, tipoAbertura);
+					this.casa.moverAbertura(abertura, novoEstado);
+					System.out.print("Novo estado da "+tipoAbertura+": "+abertura.getEstado());
+				}else {
+					EntradaSaida.exibeMsgEncerraPrograma();
+				}
 			
 				JOptionPane.showConfirmDialog(null, "Movimentar portas ou janelas");
 			break;

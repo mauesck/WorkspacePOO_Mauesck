@@ -9,6 +9,7 @@ import modelo.Aberturas;
 
 public class EntradaSaida {
 
+	//OT8.3
 	public static int solicitaOpcao() {
 		String[] opcoes = {"Construir casa","Movimentar portas ou janelas","Ver informacoes da casa","Sair do programa"};
 		JComboBox<String> menu = new JComboBox<String>(opcoes);
@@ -16,10 +17,12 @@ public class EntradaSaida {
 		return menu.getSelectedIndex();
 	}
 	
+	//OT8.4
 	public static void exibeMsgEncerraPrograma() {
 		JOptionPane.showMessageDialog(null, "O programa será encerrado!");
 	}
 	
+	//OT9.5
 	public static String solicitaDescricao(String descricao, int ordem) {
 		if(ordem==0) {
 			return JOptionPane.showInputDialog("Informe a descricao da "+descricao);
@@ -36,13 +39,14 @@ public class EntradaSaida {
 		return Integer.parseInt(JOptionPane.showInputDialog("Informe a quantidade de "+abertura));
 	}
 	
+	//OT9.7
 	public static int solicitaEstado(String tipoAbertura) {
 		String[] opcoes = {"Fechada","Aberta","teste"};
 		
 		return JOptionPane.showOptionDialog(null, "Informe o estado da "+tipoAbertura, 
 				"Estado", JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, opcoes, opcoes[1]);
 	}
-	
+	//OT10.2
 	public static String solicitaTipoAbertura() {
 		String[] opcoes = {"Porta","Janela"};
 		
@@ -57,6 +61,7 @@ public class EntradaSaida {
 		}
 	}
 	
+	//OT10.4
 	public static int solicitaAberturaMover(ArrayList<Aberturas> listaDeAberturas) {
 		String tipoAbertura = listaDeAberturas.get(0).getClass().getName();
 		tipoAbertura = tipoAbertura.replaceAll("modelo.", "");
@@ -78,5 +83,10 @@ public class EntradaSaida {
 			return -1;
 		}
 		
+	}
+	
+	//OT10.7
+	public static void exibeMsgAbertura() {
+		JOptionPane.showMessageDialog(null, "Nenhuma abertura será movimentada");
 	}
 }
