@@ -48,12 +48,15 @@ public class EntradaSaida {
 	}
 	//OT10.2
 	public static String solicitaTipoAbertura() {
+		//Vetor opcoes de 2 posições.
 		String[] opcoes = {"Porta","Janela"};
 		
+		//Var tipoAbertura recebendo a abertura a ser movida.
 		int tipoAbertura = JOptionPane.showOptionDialog(null, "Informe qual tipo de abertura deseja mover", 
 				"Mover abertura", JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, 
 				null, opcoes, opcoes[0]);
 
+		//Validação para definir oque o metódo irá retornar. "opcoes" retorna "porta", "opcoes[0]" retorna "janela".
 		if(tipoAbertura==0) {
 			return "porta";
 		}else {
@@ -63,11 +66,18 @@ public class EntradaSaida {
 	
 	//OT10.4
 	public static int solicitaAberturaMover(ArrayList<Aberturas> listaDeAberturas) {
+		//Descobrindo se na posição há uma porta ou janela.
 		String tipoAbertura = listaDeAberturas.get(0).getClass().getName();
+		/*Acima o metodo getName() traz a ocorrencia completa da posição em listaDeAbertura, 
+		usamos então replaceAll para substituir "modelo." por "", ficando apenas "porta" ou 
+		"janela" e atribuindo a tipoAbertura*/ 
 		tipoAbertura = tipoAbertura.replaceAll("modelo.", "");
+		//Descobrindo quantos elemento a lista possui através de size().
 		int qtdeAbertura = listaDeAberturas.size();
+		/*Vetor criado com a quantidade de elementos em listaDeAberturas, repare que o método
+		construtor que determina o tamanho do vetor é qtdeAbertura*/
 		String[] descricoesAberturas = new String[qtdeAbertura];
-		
+		//For que repetira tendo como referencia qtdeAbertura.
 		for(int i=0; i<qtdeAbertura; i++) {
 			descricoesAberturas[i]=listaDeAberturas.get(i).getDescricao();
 		}

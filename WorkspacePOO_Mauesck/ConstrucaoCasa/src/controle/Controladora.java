@@ -82,7 +82,6 @@ public class Controladora {
 				//OT10.2
 				ArrayList<Aberturas> listaDeAberturas = new ArrayList<Aberturas>();
 				
-				
 				//Validando o retorno do método solicitaTipoAbertura().
 				if(tipoAbertura.equals("porta")) {
 					/*Objeto casa acessando getListaDePortas() enviando o retorno 
@@ -93,6 +92,7 @@ public class Controladora {
 				}
 				
 				//OT10.3
+				//Var posicao recebendo o retorno do método que tem como parametro a var listaDeAberturas.
 				int posicao = EntradaSaida.solicitaAberturaMover(listaDeAberturas);
 				int novoEstado=0;
 				
