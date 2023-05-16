@@ -77,12 +77,13 @@ public class EntradaSaida {
 		/*Vetor criado com a quantidade de elementos em listaDeAberturas, repare que o método
 		construtor que determina o tamanho do vetor é qtdeAbertura*/
 		String[] descricoesAberturas = new String[qtdeAbertura];
-		//For que repetira tendo como referencia qtdeAbertura.
+		//For que tera como base de repetição qtdeAbertura.
 		for(int i=0; i<qtdeAbertura; i++) {
 			descricoesAberturas[i]=listaDeAberturas.get(i).getDescricao();
 		}
-		
+		//msg recebe a porta ou janela a ser movimentada.
 		String msg = "Escolha a "+tipoAbertura+"a ser movimentada";
+		//Objeto exibicaoAberturas irá receber os dados de descricoesAberturas. 
 		JComboBox exibicaoAberturas = new JComboBox(descricoesAberturas);
 		int confirmacao = JOptionPane.showConfirmDialog(null, exibicaoAberturas, msg,
 				JOptionPane.OK_CANCEL_OPTION);

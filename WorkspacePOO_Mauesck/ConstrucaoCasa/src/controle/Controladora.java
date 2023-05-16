@@ -96,7 +96,7 @@ public class Controladora {
 				int posicao = EntradaSaida.solicitaAberturaMover(listaDeAberturas);
 				int novoEstado=0;
 				
-				//OT10.4
+				//OT10.5
 				if(posicao!=-1) {
 					novoEstado = EntradaSaida.solicitaEstado(tipoAbertura);
 					Aberturas abertura = this.casa.retornaAbertura(posicao, tipoAbertura);
