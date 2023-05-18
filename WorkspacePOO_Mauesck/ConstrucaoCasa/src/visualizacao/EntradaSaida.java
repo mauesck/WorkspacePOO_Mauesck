@@ -100,4 +100,17 @@ public class EntradaSaida {
 	public static void exibeMsgAbertura() {
 		JOptionPane.showMessageDialog(null, "Nenhuma abertura será movimentada");
 	}
+	
+	//OT11.3
+	public static void exibeInfoCasa(String informacoes) {
+		JOptionPane.showMessageDialog(null, informacoes, "Informações da casa", JOptionPane.INFORMATION_MESSAGE);
+	}
+	
+	
+	
+	
+	
+	
+	
+	
 }
