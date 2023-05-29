@@ -34,6 +34,10 @@ public class Controladora {
 				// OT9.6
 				// *1* > Declaração de um ArrayList do tipo Aberturas, que receberá cada uma das
 				// portas cadastradas.
+				/*
+				 * 1> Declaração de um ArrayList do tipo Aberturas, que receberá cada uma das
+				 * portas cadastradas.
+				 */
 				ArrayList<Aberturas> listaDePortas = new ArrayList<Aberturas>();
 				// Este for é necessário para inserir a quantidade de descrições e estados para
 				// a quantidade de portas.
@@ -48,6 +52,7 @@ public class Controladora {
 				}
 
 				// *2* > Os mesmos eventos de *1* ocorrerão aqui.
+				// 2> Os mesmos eventos de 1 ocorrerão aqui.
 				ArrayList<Aberturas> listaDeJanelas = new ArrayList<Aberturas>();
 				for (int i = 0; i < qtdeJanelas; i++) {
 					Janela janela = new Janela();
@@ -67,12 +72,20 @@ public class Controladora {
 
 				for (Aberturas porta : casa.getListaDePortas()) {
 					System.out.print("Descricao da porta: " + porta.getDescricao() + "\n");
-					System.out.print("Estado da porta: " + porta.getEstado() + "\n");
+					if (porta.getEstado() == 0) {
+						System.out.print("Estado da porta: Fechada \n");
+					} else {
+						System.out.print("Estado da porta: Aberta \n");
+					}
 				}
 
 				for (Aberturas janela : casa.getListaDeJanelas()) {
 					System.out.print("Descricao da janela: " + janela.getDescricao() + "\n");
-					System.out.print("Estado da janela: " + janela.getEstado() + "\n");
+					if (janela.getEstado() == 0) {
+						System.out.print("Estado da janela: Fechada \n");
+					} else {
+						System.out.print("Estado da janela: Aberta \n");
+					}
 				}
 
 				verificaConstrucaoCasa = "Contrução bem sucedida!";
@@ -81,11 +94,9 @@ public class Controladora {
 				break;
 
 			case 1:
-				// PERGUNTAR PQ FAZER ESSA VALIDAÇÃO FORA DO CASE DA ERRO.
+				// Validação de casa construida.
 				if (verificaConstrucaoCasa.equals("Contrução bem sucedida!")) {
-
-					// OT10.1
-					// Variável recebendo o retorno do médoto.
+					// OT10.1 Variável recebendo o retorno do médoto.
 					String tipoAbertura = EntradaSaida.solicitaTipoAbertura();
 
 					// OT10.2
@@ -117,20 +128,18 @@ public class Controladora {
 					} else {
 						EntradaSaida.exibeMsgEncerraPrograma();
 					}
-
 				} else {
-					JOptionPane.showMessageDialog(null, "Não há casa construida!");
+					JOptionPane.showMessageDialog(null, "Não há casa para movimentar portas ou janelas!");
 				}
 				break;
 
 			case 2:
+				// Validação de casa construida.
 				if (verificaConstrucaoCasa.equals("Contrução bem sucedida!")) {
 					// OT11.2
 					String informacoes = this.casa.geraInfoCasa();
 					// OT11.4
 					EntradaSaida.exibeInfoCasa(informacoes);
-
-					JOptionPane.showConfirmDialog(null, "Ver informações da casa");
 				} else {
 					JOptionPane.showMessageDialog(null, "Não há casa construida!");
 				}

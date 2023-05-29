@@ -38,6 +38,7 @@ public class EntradaSaida {
 
 	public static int solicitaQtdeAberturas(String abertura) {
 		int valor = Integer.parseInt(JOptionPane.showInputDialog("Informe a quantidade de " + abertura));
+		//VALIDAÇÃO PARA NÃO SER INFORMADO VALOR IGUAL OU MENOR QUE ZERO.
 		while (valor <= 0) {
 			JOptionPane.showMessageDialog(null, "Informe uma quantidade de "+abertura+" maior que 0!");
 			valor = Integer.parseInt(JOptionPane.showInputDialog("Informe a quantidade de " + abertura));
@@ -115,5 +116,4 @@ public class EntradaSaida {
 	public static void exibeInfoCasa(String informacoes) {
 		JOptionPane.showMessageDialog(null, informacoes, "Informações da casa", JOptionPane.INFORMATION_MESSAGE);
 	}
-
 }

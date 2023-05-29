@@ -64,26 +64,34 @@ public class Casa {
 	
 	//OT11.1
 	public String geraInfoCasa() {
+		String estados = "";
 		//Var informacoes recebendo os dados dos atributos descricao e cor.
 		String informacoes = "Descrição: "+this.descricao+"\nCor: "+this.cor+"\nLista de portas:\n";
-		
 		//For que repete até a quantidade de portas em lista de portas, também definindo abertura como sendo do tipo Aberturas.
 		for(Aberturas abertura:this.listaDePortas) {
-			//recebendo o retorno do método.	
+			//Recebendo o retorno do método.	
 			int estado = abertura.getEstado();
-			//informacoes recebendo ela mesma mais o retorno dos métodos junto com descrições programadas.
-			informacoes+=abertura.getDescricao()+" Estado: "+abertura.getEstado()+"\n";
-		}
-		
-		//informacoes recebendo ela mesma mais uma descricao para que aqui se encaixe o restante do código.
+			if(estado == 0) {
+				estados = "Fechado";
+			}else {
+				estados = "Aberto";
+			}
+			//Informacoes recebendo ela mesma mais o retorno dos métodos junto com descrições programadas.
+			informacoes+=abertura.getDescricao()+" Estado: "+estados+"\n";
+		}	
+		//Informacoes recebendo ela mesma mais uma descricao para que aqui se encaixe o restante do código.
 		informacoes += "\nLista de janelas: \n";
-		
-		//mesma coisa do for acima.
+		//Mesma coisa do for acima.
 		for(Aberturas abertura:this.listaDeJanelas) {
 			int estado = abertura.getEstado();
-			informacoes+=abertura.getDescricao()+" Estado: "+abertura.getEstado()+"\n";
+			if(estado == 0) {
+				estados = "Fechado";
+			}else {
+				estados = "Aberto";
+			}
+			informacoes+=abertura.getDescricao()+" Estado: "+estados+"\n";
 		}
-		
+		//Retorno.
 		return informacoes;
 	}
 
