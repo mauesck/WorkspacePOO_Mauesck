@@ -81,6 +81,8 @@ public class EntradaSaida {
 		 * listaDeAbertura, usamos então replaceAll para substituir "modelo." por "",
 		 * ficando apenas "porta" ou "janela" e atribuindo a tipoAbertura
 		 */
+		
+		//JComboBox costuma trazer a primeira linha em branco, por isso o replaceAll.
 		tipoAbertura = tipoAbertura.replaceAll("modelo.", "");
 		// Descobrindo quantos elemento a lista possui através de size().
 		int qtdeAbertura = listaDeAberturas.size();
@@ -99,6 +101,7 @@ public class EntradaSaida {
 		JComboBox exibicaoAberturas = new JComboBox(descricoesAberturas);
 		int confirmacao = JOptionPane.showConfirmDialog(null, exibicaoAberturas, msg, JOptionPane.OK_CANCEL_OPTION);
 
+		//0 é para o OK em JOptionPane, -1 para CANCEL.
 		if (confirmacao == 0) {
 			return exibicaoAberturas.getSelectedIndex();
 		} else {

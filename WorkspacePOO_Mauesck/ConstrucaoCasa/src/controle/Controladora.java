@@ -95,7 +95,7 @@ public class Controladora {
 
 			case 1:
 				// Validação de casa construida.
-				if (verificaConstrucaoCasa.equals("Contrução bem sucedida!")) {
+				//if (verificaConstrucaoCasa.equals("Contrução bem sucedida!")) {
 					// OT10.1 Variável recebendo o retorno do médoto.
 					String tipoAbertura = EntradaSaida.solicitaTipoAbertura();
 
@@ -128,9 +128,9 @@ public class Controladora {
 					} else {
 						EntradaSaida.exibeMsgEncerraPrograma();
 					}
-				} else {
-					JOptionPane.showMessageDialog(null, "Não há casa para movimentar portas ou janelas!");
-				}
+				//} else {
+					//JOptionPane.showMessageDialog(null, "Não há casa para movimentar portas ou janelas!");
+				//}
 				break;
 
 			case 2:
