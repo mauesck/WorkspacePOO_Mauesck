@@ -13,7 +13,6 @@ public class Controladora {
 	private Casa casa = null;
 
 	public void exibeMenu() {
-		String verificaConstrucaoCasa = "";
 		int opcao;
 		do {
 			opcao = EntradaSaida.solicitaOpcao();
@@ -87,15 +86,11 @@ public class Controladora {
 						System.out.print("Estado da janela: Aberta \n");
 					}
 				}
-
-				verificaConstrucaoCasa = "Contrução bem sucedida!";
-
-				JOptionPane.showMessageDialog(null, verificaConstrucaoCasa);
 				break;
 
 			case 1:
 				// Validação de casa construida.
-				//if (verificaConstrucaoCasa.equals("Contrução bem sucedida!")) {
+				if (this.casa!=null) {
 					// OT10.1 Variável recebendo o retorno do médoto.
 					String tipoAbertura = EntradaSaida.solicitaTipoAbertura();
 
@@ -128,14 +123,14 @@ public class Controladora {
 					} else {
 						EntradaSaida.exibeMsgEncerraPrograma();
 					}
-				//} else {
-					//JOptionPane.showMessageDialog(null, "Não há casa para movimentar portas ou janelas!");
-				//}
+				} else {
+					JOptionPane.showMessageDialog(null, "Não há casa para movimentar portas ou janelas!");
+				}
 				break;
 
 			case 2:
 				// Validação de casa construida.
-				if (verificaConstrucaoCasa.equals("Contrução bem sucedida!")) {
+				if (this.casa!=null) {
 					// OT11.2
 					String informacoes = this.casa.geraInfoCasa();
 					// OT11.4
