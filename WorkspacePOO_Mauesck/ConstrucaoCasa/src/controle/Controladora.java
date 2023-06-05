@@ -33,10 +33,6 @@ public class Controladora {
 				// OT9.6
 				// *1* > Declaração de um ArrayList do tipo Aberturas, que receberá cada uma das
 				// portas cadastradas.
-				/*
-				 * 1> Declaração de um ArrayList do tipo Aberturas, que receberá cada uma das
-				 * portas cadastradas.
-				 */
 				ArrayList<Aberturas> listaDePortas = new ArrayList<Aberturas>();
 				// Este for é necessário para inserir a quantidade de descrições e estados para
 				// a quantidade de portas.
@@ -47,11 +43,12 @@ public class Controladora {
 					// capturando o retorno do método solicitaDescricao() da classe EntradaSaida.
 					porta.setDescricao(EntradaSaida.solicitaDescricao("porta", (i + 1)));
 					porta.setEstado(EntradaSaida.solicitaEstado("porta"));
+					//Objeto listaDePortas recebendo uma das portas pelo objeto porta.
 					listaDePortas.add(porta);
+					System.out.print(listaDePortas);
 				}
 
 				// *2* > Os mesmos eventos de *1* ocorrerão aqui.
-				// 2> Os mesmos eventos de 1 ocorrerão aqui.
 				ArrayList<Aberturas> listaDeJanelas = new ArrayList<Aberturas>();
 				for (int i = 0; i < qtdeJanelas; i++) {
 					Janela janela = new Janela();

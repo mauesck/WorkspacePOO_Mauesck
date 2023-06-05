@@ -1,10 +1,17 @@
 package modelo;
 
-public abstract class Carro {
+public class Carro {
 
-	private String modelo;
-	private String cor;
+	protected String nome;
+	protected String modelo;
+	protected String cor;
 	
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
 	public String getModelo() {
 		return modelo;
 	}
