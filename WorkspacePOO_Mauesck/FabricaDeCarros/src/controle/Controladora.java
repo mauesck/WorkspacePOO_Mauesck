@@ -32,16 +32,12 @@ public class Controladora {
 					carro.setCor(EntradaSaida.solocitaCor((i + 1) + "º Carro "));
 					ListaDeCarros.add(carro);
 				}
-				this.fabrica.fabricarCarro(ListaDeCarros);
+				this.fabrica.fabricarCarro(ListaDeCarros, null);
 				break;
 			case 1:
-				if (this.fabrica != null) {
-					ListaDeCarros = fabrica.getListaDeCarros();
-					int posicao = EntradaSaida.menuVenda(ListaDeCarros);
-					this.fabrica.venderCarro(posicao, ListaDeCarros);
-				} else {
-					JOptionPane.showMessageDialog(null, "Não há carros em estoque!");
-				}
+				ListaDeCarros = fabrica.getListaDeCarros();
+				int posicao = EntradaSaida.menuVenda(ListaDeCarros);
+				this.fabrica.venderCarro(posicao, ListaDeCarros);
 				break;
 			case 2:
 				String informacoes = this.fabrica.geraInfoCarros();

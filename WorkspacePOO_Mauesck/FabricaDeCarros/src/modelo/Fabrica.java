@@ -21,17 +21,17 @@ public class Fabrica {
 		}
 	}
 
-	public void fabricarCarro(ArrayList<Carro> listaDeCarros) {
+	public void fabricarCarro(ArrayList<Carro> listaDeCarros, ArrayList<Carro> teste) {
 		setListaDeCarros(listaDeCarros);
 	}
 
 	public String geraInfoCarros() {
 		String informacoes = "";
-		if (this.listaDeCarros != null) {
+		//if (this.listaDeCarros != null) {
 			for (Carro carro : this.listaDeCarros) {
 				informacoes += carro.getNome() + " " + carro.getModelo() + " " + carro.getCor() + "\n";
 			}
-		}
+		//}
 
 		return informacoes;
 	}

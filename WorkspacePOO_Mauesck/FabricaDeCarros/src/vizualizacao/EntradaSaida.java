@@ -36,12 +36,12 @@ public class EntradaSaida {
 	}
 
 	public static void exibeInfoCarro(String informacoes) {
-		if (informacoes.equals("")) {
-			JOptionPane.showMessageDialog(null, "Não há carros em estoque!");
-		} else {
+		//if (informacoes.equals("")) {
+			//JOptionPane.showMessageDialog(null, "Não há carros em estoque!");
+		//} else {
 			JOptionPane.showMessageDialog(null, informacoes, "Informações dos carros: ",
 					JOptionPane.INFORMATION_MESSAGE);
-		}
+		//}
 	}
 
 	public static int menuVenda(ArrayList<Carro> listaDeCarros) {
