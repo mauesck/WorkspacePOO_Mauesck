@@ -27,12 +27,11 @@ public class Fabrica {
 
 	public String geraInfoCarros() {
 		String informacoes = "";
-		//if (this.listaDeCarros != null) {
+		if (this.listaDeCarros != null) {
 			for (Carro carro : this.listaDeCarros) {
 				informacoes += carro.getNome() + " " + carro.getModelo() + " " + carro.getCor() + "\n";
 			}
-		//}
-
+		}
 		return informacoes;
 	}
 
