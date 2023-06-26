@@ -32,7 +32,7 @@ public class EntradaSaida {
 	}
 
 	public static String solocitaCor(String ordem) {
-		return JOptionPane.showInputDialog(null, ordem + "Cor:");
+		return JOptionPane.showInputDialog(null, ordem + "Cor: ");
 	}
 
 	public static void exibeInfoCarro(String informacoes) {

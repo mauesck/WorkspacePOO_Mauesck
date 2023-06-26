@@ -1,7 +1,7 @@
 package modelo;
 
 public class Movimentacao {
-	private int tipo; //considerar: 1- saque e 2- depósito
+	private int tipo; //considerar: 1- depósito e 2- saque
 	private double valor;
 	private String data;
 
