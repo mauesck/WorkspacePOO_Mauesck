@@ -1,5 +1,6 @@
 package modelo;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Conta {
@@ -42,10 +43,11 @@ public class Conta {
 
 	public void depositar(ArrayList<Movimentacao> listaDeMovimentacao, double saldo) {
 		setListaDeMovimentacao(listaDeMovimentacao);
-		setSaldo(this.getSaldo() + saldo);
+		setSaldo(this.saldo + saldo);
 	}
 
-	public void sacar(double saque) {
+	public void sacar(ArrayList<Movimentacao> listaDeMovimentacao, double saque) {
+		setListaDeMovimentacao(listaDeMovimentacao);
 		setSaldo(this.saldo - saque);
 	}
 
@@ -61,9 +63,12 @@ public class Conta {
 
 	public String gerarExtrato() {
 		String informacoes = "";
-		for (Movimentacao movimentacao : this.listaDeMovimentacao) {
-			informacoes += "Tipo: " + movimentacao.getTipo() + " Data: " + movimentacao.getData() + " Valor: "
-					+ movimentacao.getValor() + "\n";
+		if (this.listaDeMovimentacao != null) {
+			Movimentacao movimentacao = new Movimentacao();
+			for (int i = 0; i<listaDeMovimentacao.size(); i++) {
+				informacoes += "Tipo: " + movimentacao.getTipo() + " Data: " + movimentacao.getData() + " Valor: "
+						+ movimentacao.getValor() + "\n";
+			}
 		}
 		return informacoes;
 	}

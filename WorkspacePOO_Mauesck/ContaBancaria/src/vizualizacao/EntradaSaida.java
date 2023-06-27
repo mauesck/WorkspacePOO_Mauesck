@@ -25,7 +25,8 @@ public class EntradaSaida {
 	}
 
 	public static int menu() {
-		String[] opcoes = { "Deposito", "Saque", "Dados da Conta", "Saldo", "Extrato Completo", "Extrato de Depositos", "Extrato de Saques" };
+		String[] opcoes = { "Deposito", "Saque", "Dados da Conta", "Saldo", "Extrato Completo", "Extrato de Depositos",
+				"Extrato de Saques" };
 		JComboBox<String> menu = new JComboBox<>(opcoes);
 		int opcao = JOptionPane.showConfirmDialog(null, menu, "Escolha a operação:", JOptionPane.OK_CANCEL_OPTION);
 		if (opcao == -1 || opcao == 2) {
@@ -53,7 +54,11 @@ public class EntradaSaida {
 	}
 
 	public static void exibirExtratoCompleto(String informacoes) {
-		JOptionPane.showMessageDialog(null, informacoes);
+		if (informacoes.equals("")) {
+			JOptionPane.showMessageDialog(null, "Não há movimentações!");
+		} else {
+			JOptionPane.showMessageDialog(null, informacoes);
+		}
 	}
 
 	public static void exibirExtratoDeDepositos() {
@@ -63,7 +68,7 @@ public class EntradaSaida {
 	public static void exibirExtratoDeSaques() {
 
 	}
-	
+
 	public static String getDate() {
 		DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 		Date date = new Date();

@@ -14,6 +14,7 @@ public class Controladora {
 	public void exibirMenu() {
 
 		int opcao = 0;
+		Double saldo = null;
 
 		conta.setTitularDaConta(EntradaSaida.solicitaTitular());
 		conta.setTipo(EntradaSaida.solicitaTipoConta());
@@ -29,11 +30,16 @@ public class Controladora {
 				movimentacao.setData(EntradaSaida.getDate());
 				movimentacao.setValor(EntradaSaida.solicitarInformacoesDeposito());
 				listaDeMovimentacao.add(movimentacao);
-				double saldo = movimentacao.getValor();
+				saldo = movimentacao.getValor();
 				this.conta.depositar(listaDeMovimentacao, saldo);
 				break;
 			case 1:
-				conta.sacar(EntradaSaida.solicitarInformacoesSaque());
+				movimentacao.setTipo(2);
+				movimentacao.setData(EntradaSaida.getDate());
+				movimentacao.setValor(EntradaSaida.solicitarInformacoesSaque());
+				listaDeMovimentacao.add(movimentacao);
+				saldo = movimentacao.getValor();
+				this.conta.sacar(listaDeMovimentacao, saldo);
 				break;
 			case 2:
 				EntradaSaida.exibirDadosDaConta(conta.gerarDadosDaConta());
