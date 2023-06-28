@@ -2,6 +2,8 @@ package modelo;
 
 import java.util.ArrayList;
 
+import javax.swing.JOptionPane;
+
 public class Conta {
 	private String titularDaConta;
 	private int tipo; // 1-conta poupança, 2-conta corrente
@@ -42,39 +44,78 @@ public class Conta {
 
 	public void depositar(ArrayList<Movimentacao> listaDeMovimentacao, double saldo) {
 		setListaDeMovimentacao(listaDeMovimentacao);
-		setSaldo(this.getSaldo() + saldo);
+		setSaldo(this.saldo + saldo);
 	}
 
-	public void sacar(double saque) {
-		setSaldo(this.saldo - saque);
+	public void sacar(ArrayList<Movimentacao> listaDeMovimentacao, double saldo) {
+		setListaDeMovimentacao(listaDeMovimentacao);
+		setSaldo(this.saldo - saldo);
 	}
 
 	public String gerarSaldo() {
-		String saldo = "Saldo da conta: " + this.saldo;
+		String saldo = "Saldo da conta: R$" + this.saldo;
 		return saldo;
 	}
 
 	public String gerarDadosDaConta() {
-		String dados = "Titular: " + this.titularDaConta + "\n Tipo da conta: " + this.tipo + "\n Saldo: " + this.saldo;
+		String dados = "Titular: " + this.titularDaConta + "\n Tipo da conta: " + this.tipo + "\n Saldo: R$"
+				+ this.saldo;
 		return dados;
 	}
 
 	public String gerarExtrato() {
-		String informacoes = "";
+		String tipoConta;
+		if (this.tipo == 1) {
+			tipoConta = "Conta Poupança";
+		} else {
+			tipoConta = "Conta Corrente";
+		}
+
+		String informacoes = titularDaConta + "\n" + tipoConta + "\n" + "\n";
+		String tipoMovimentacao;
 		for (Movimentacao movimentacao : this.listaDeMovimentacao) {
-			informacoes += "Tipo: " + movimentacao.getTipo() + " Data: " + movimentacao.getData() + " Valor: "
+			if (movimentacao.getTipo() == 1) {
+				tipoMovimentacao = "Depósito";
+			} else {
+				tipoMovimentacao = "Saque";
+			}
+			informacoes += tipoMovimentacao + " - Data: " + movimentacao.getData() + " - Valor R$: "
 					+ movimentacao.getValor() + "\n";
 		}
 		return informacoes;
 	}
 
-	public double gerarExtratoDepositos() {
-		return 0;
+	public String gerarExtratoDepositos() {
+		String tipoConta;
+		if (this.tipo == 1) {
+			tipoConta = "Conta Poupança";
+		} else {
+			tipoConta = "Conta Corrente";
+		}
 
+		String informacoes = titularDaConta + "\n" + tipoConta + "\n" + "\n" + "Depósitos: \n" + "\n";
+		for (Movimentacao movimentacao : this.listaDeMovimentacao) {
+			if (movimentacao.getTipo() == 1) {
+				informacoes += "Data: " + movimentacao.getData() + " - Valor R$: " + movimentacao.getValor() + "\n";
+			}
+		}
+		return informacoes;
 	}
 
-	public double gerarExtratoSaques() {
-		return 0;
+	public String gerarExtratoSaques() {
+		String tipoConta;
+		if (this.tipo == 1) {
+			tipoConta = "Conta Poupança";
+		} else {
+			tipoConta = "Conta Corrente";
+		}
 
+		String informacoes = titularDaConta + "\n" + tipoConta + "\n" + "\n" + "Saques: \n" + "\n";
+		for (Movimentacao movimentacao : this.listaDeMovimentacao) {
+			if (movimentacao.getTipo() == 2) {
+				informacoes += "Data: " + movimentacao.getData() + " - Valor R$: " + movimentacao.getValor() + "\n";
+			}
+		}
+		return informacoes;
 	}
 }

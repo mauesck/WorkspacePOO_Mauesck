@@ -41,7 +41,7 @@ public class EntradaSaida {
 	}
 
 	public static Double solicitarInformacoesSaque() {
-		return Double.parseDouble(JOptionPane.showInputDialog("Digite o valor do saque:"));
+		return Double.parseDouble(JOptionPane.showInputDialog(null, "Digite o valor do saque:"));
 	}
 
 	public static void exibirSaldo(String saldo) {
@@ -56,12 +56,12 @@ public class EntradaSaida {
 		JOptionPane.showMessageDialog(null, informacoes);
 	}
 
-	public static void exibirExtratoDeDepositos() {
-
+	public static void exibirExtratoDeDepositos(String informacoes) {
+		JOptionPane.showMessageDialog(null, informacoes);
 	}
 
-	public static void exibirExtratoDeSaques() {
-
+	public static void exibirExtratoDeSaques(String informacoes) {
+		JOptionPane.showMessageDialog(null, informacoes);
 	}
 	
 	public static String getDate() {
